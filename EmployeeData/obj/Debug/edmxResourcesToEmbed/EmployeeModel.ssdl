@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employee_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DEPARTMENTS">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="department_name" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Employee">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone_number" Type="varchar" MaxLength="22" Nullable="false" />
+    <Property Name="department_id" Type="int" Nullable="false" />
+    <Property Name="salary" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Job">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_title" Type="varchar" MaxLength="30" />
+    <Property Name="min_salary" Type="varchar" MaxLength="50" />
+    <Property Name="max_salary" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Employee_Deprt">
+    <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="1" />
+    <End Role="Tbl_Employee" Type="Self.Tbl_Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENTS">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="Tbl_Employee">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Job">
+    <End Role="Tbl_Job" Type="Self.Tbl_Job" Multiplicity="1" />
+    <End Role="Tbl_Employee" Type="Self.Tbl_Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Job">
+        <PropertyRef Name="job_id" />
+      </Principal>
+      <Dependent Role="Tbl_Employee">
+        <PropertyRef Name="Job_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employee_ManagementModelStoreContainer">
+    <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Employee" EntityType="Self.Tbl_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Job" EntityType="Self.Tbl_Job" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employee_Deprt" Association="Self.FK_Employee_Deprt">
+      <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+      <End Role="Tbl_Employee" EntitySet="Tbl_Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Job" Association="Self.FK_Employee_Job">
+      <End Role="Tbl_Job" EntitySet="Tbl_Job" />
+      <End Role="Tbl_Employee" EntitySet="Tbl_Employee" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

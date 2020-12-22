@@ -1,0 +1,15 @@
+C:\Users\USER\source\repos\EmployeeData\TEST\obj\Debug\TEST.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\EmployeeData\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\TEST.exe.config
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\TEST.exe
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\TEST.pdb
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EmployeeData.dll
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EntityFramework.dll
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EmployeeData.pdb
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EmployeeData.dll.config
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EntityFramework.xml
+C:\Users\USER\source\repos\EmployeeData\TEST\obj\Debug\TEST.csproj.CopyComplete
+C:\Users\USER\source\repos\EmployeeData\TEST\obj\Debug\TEST.exe
+C:\Users\USER\source\repos\EmployeeData\TEST\obj\Debug\TEST.pdb
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\source\repos\EmployeeData\TEST\bin\Debug\EntityFramework.SqlServer.xml
